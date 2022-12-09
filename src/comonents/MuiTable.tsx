@@ -4,6 +4,7 @@ import * as React from 'react';
 import {
     TableContainer,
     Table,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     TableHead,
     TableBody,
     TableRow,
@@ -32,26 +33,29 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name: string) {
-  return { name };
+function createData(name: string,description: string) {
+  return { name,description };
 }
 
 const rows = [
-  createData('Frozen yoghurt'),
-  createData('Ice cream sandwich'),
-  createData('Eclair'),
-  createData('Cupcake'),
+  createData('Frozen yoghurt','Cold'),
+  createData('Ice cream sandwich','Warm'),
+  createData('Eclair','Melts'),
+  createData('Cupcake','Hot'),
 ];
 
 export const MuiTable = () => {
     return (
         <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table" stickyHeader>
+      <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableBody>
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
-                {row.name}
+                  {row.name}
+                  <StyledTableCell align="justify">
+                      {row.description}
+                  </StyledTableCell>
               </StyledTableCell>
                   <StyledTableCell align="right">
                       <Button href="">Read More</Button>
