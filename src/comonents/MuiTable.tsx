@@ -41,18 +41,12 @@ const rows = [
   createData('Ice cream sandwich'),
   createData('Eclair'),
   createData('Cupcake'),
-  createData('Gingerbread'),
 ];
 
 export const MuiTable = () => {
     return (
         <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Articles</StyledTableCell>
-          </TableRow>
-        </TableHead>
+      <Table sx={{ minWidth: 700 }} aria-label="customized table" stickyHeader>
         <TableBody>
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
@@ -60,13 +54,13 @@ export const MuiTable = () => {
                 {row.name}
               </StyledTableCell>
                   <StyledTableCell align="right">
-                      <Button>Read More</Button>
+                      <Button href="">Read More</Button>
                   </StyledTableCell>
                   <StyledTableCell align="right">
-                      <Button>Delete</Button>
+                      <Button href="">Delete</Button>
                   </StyledTableCell>
                   <StyledTableCell align="right">
-                      <Button>Set as Read</Button>
+                      <Button href="">Set as Read</Button>
                   </StyledTableCell>
             </StyledTableRow>
           ))}
