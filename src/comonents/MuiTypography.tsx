@@ -3,7 +3,7 @@ import { Typography } from '@mui/material'
 export const MuiTypography = () => {
     return (
         <div>
-            <Typography variant="h3">Articles</Typography>
+            <Typography variant="h4">ReadNote</Typography>
         </div>
     )
 }

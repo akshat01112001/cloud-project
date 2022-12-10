@@ -1,10 +1,12 @@
-import { TextField } from "@mui/material"
+import { TextField, FormControl} from "@mui/material"
 import React from 'react'
 
 export const MuiTextField = () => {
     return (
         <div>
-            <TextField label="Link" variant="standard" helperText="Provide a valid article URL" required/>
+            <FormControl fullWidth sx={{ m: 1 }}>
+                <TextField label="Link" variant="standard" helperText="Provide a valid article URL" size="medium" required />
+            </FormControl>
         </div>
     )
 }
